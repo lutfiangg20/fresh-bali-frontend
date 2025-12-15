@@ -1,10 +1,11 @@
+"use client";
 import Image from "next/image";
 import heroImg from "@/assets/Car-Rental.png"; // ganti dengan image kamu
-import Link from "next/link";
+import { motion } from "motion/react";
 
 const Hero = () => {
 	return (
-		<section className="relative h-[90vh] w-full">
+		<section className="relative h-[50vh] w-full">
 			{/* Background */}
 			<div className="absolute inset-0 -z-10">
 				<Image
@@ -18,25 +19,15 @@ const Hero = () => {
 
 			{/* Content */}
 			<div className="h-full flex flex-col justify-center items-start px-8 lg:px-28 text-white">
-				<h1 className="uppercase text-4xl lg:text-6xl font-bold leading-tight max-w-2xl">
-					syarat dan ketentuan
-				</h1>
-
-				<div className="mt-8 flex gap-5">
-					<Link
-						href="/sewa"
-						className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-85 transition"
-					>
-						Lihat Mobil
-					</Link>
-
-					<Link
-						href="/kontak"
-						className="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition"
-					>
-						Hubungi Kami
-					</Link>
-				</div>
+				<motion.h1
+					initial={{ opacity: 0, y: 40 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6 }}
+					viewport={{ once: true, amount: 0.2 }}
+					className="uppercase text-4xl lg:text-6xl font-bold leading-tight "
+				>
+					syarat & ketentuan
+				</motion.h1>
 			</div>
 		</section>
 	);
