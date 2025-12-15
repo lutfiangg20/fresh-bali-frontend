@@ -14,15 +14,17 @@ const MainLayout = ({ children }: Props) => {
 	const pathname = usePathname();
 	const [scroll, setScroll] = useState(0);
 	useEffect(() => {
-		window.addEventListener("scroll", () => {
+		const onScroll = () => {
 			setScroll(window.scrollY);
-		});
+		};
+		window.addEventListener("scroll", onScroll, { passive: true });
+		return () => window.removeEventListener("scroll", onScroll);
 	}, []);
 	return (
 		<div className="">
 			<div
 				className={`fixed w-full z-10 hidden lg:block transition ease-in-out duration-500 ${
-					scroll >= 200 ? "-translate-y-100" : "translate-y-0"
+					scroll >= 200 ? "-translate-y-full" : "translate-y-0"
 				}`}
 			>
 				<div
@@ -34,7 +36,7 @@ const MainLayout = ({ children }: Props) => {
 					<nav className="uppercase font-semibold flex gap-10">
 						<Link href="/">home</Link>
 						<Link href="/about">tentang kami</Link>
-						<Link href="/sewa">Semua Mobil</Link>
+						{/* <Link href="/sewa">Semua Mobil</Link> */}
 						<Link href="/syarat-dan-ketentuan">syarat dan ketentuan</Link>
 						<Link href="/galery">galery</Link>
 						<Link href="/kontak">kontak</Link>
@@ -46,6 +48,9 @@ const MainLayout = ({ children }: Props) => {
 				</div>
 			</div>
 			<main>{children}</main>
+			<div>
+				<p className="text-center py-4">Copyright © 2025 FRESH TRANS BALI</p>
+			</div>
 		</div>
 	);
 };

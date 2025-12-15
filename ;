@@ -1,0 +1,37 @@
+import Image from "next/image";
+
+const AboutUs = () => {
+	return (
+		<section className="relative  w-full px-4 space-y-10">
+			<h1 className="text-4xl z-10 w-50">
+				Kami Memastikan Setiap Perjalanan Anda Nyaman
+			</h1>
+			<div className="flex gap-2">
+				<div>
+					<p>
+						Bali Trans merupakan CV yang berbasis di bali. Didirikan sejak tahun
+						2008, kami telah membantu akomodasi berbagai konsumen baik penduduk
+						lokal maupun turis domestik dan mancanegara melalui jasa sewa mobil.
+					</p>
+					<p>
+						Bali Trans Mengusung moto “Your Travel Partner” dengan harapan dan
+						keyakinan akan selalu menjadi mitra perjalanan terbaik Anda dalam
+						mewujudkan pengalaman mengeksplorasi Bali yang aman, nyaman,
+						menyenangkan, dan berkesan.
+					</p>
+				</div>
+				<div className="-translate-y-10">
+					<Image
+						src="/about.png"
+						alt="about"
+						width={500}
+						height={500}
+						className="bg-white"
+					/>
+				</div>
+			</div>
+		</section>
+	);
+};
+
+export default AboutUs;

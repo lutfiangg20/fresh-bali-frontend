@@ -1,0 +1,38 @@
+import Image from "next/image";
+import img from "@/assets/Bali-TRANS-2-1.webp";
+
+const AboutUs = () => {
+	return (
+		<section className="relative w-full px-4 space-y-10 py-20">
+			<h1 className="text-5xl font-bold w-[60%] text-gold">
+				Kami Memastikan Setiap Perjalanan Anda Nyaman
+			</h1>
+			<div className="flex">
+				<div className="space-y-5 grow-4">
+					<p>
+						Bali Trans merupakan CV yang berbasis di bali. Didirikan sejak tahun
+						2008, kami telah membantu akomodasi berbagai konsumen baik penduduk
+						lokal maupun turis domestik dan mancanegara melalui jasa sewa mobil.
+					</p>
+					<p>
+						Bali Trans Mengusung moto “Your Travel Partner” dengan harapan dan
+						keyakinan akan selalu menjadi mitra perjalanan terbaik Anda dalam
+						mewujudkan pengalaman mengeksplorasi Bali yang aman, nyaman,
+						menyenangkan, dan berkesan.
+					</p>
+				</div>
+				<div className="-translate-y-40 -z-10 col-span-7 flex justify-end">
+					<Image
+						src={img.src}
+						alt="about"
+						width={500}
+						height={500}
+						className="bg-dark"
+					/>
+				</div>
+			</div>
+		</section>
+	);
+};
+
+export default AboutUs;
