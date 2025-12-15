@@ -38,7 +38,7 @@ const MainLayout = ({ children }: Props) => {
 						<Link href="/about">tentang kami</Link>
 						{/* <Link href="/sewa">Semua Mobil</Link> */}
 						<Link href="/syarat-dan-ketentuan">syarat dan ketentuan</Link>
-						<Link href="/galery">galery</Link>
+						<Link href="/gallery">galery</Link>
 						<Link href="/kontak">kontak</Link>
 					</nav>
 					<div>
