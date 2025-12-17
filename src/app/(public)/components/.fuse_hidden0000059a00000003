@@ -1,6 +1,5 @@
 import api from "@/lib/axios";
 import CarCard from "./CarCard";
-import apiServer from "@/lib/axiosServer";
 
 type Car = {
 	id: number;
@@ -13,7 +12,7 @@ type Car = {
 };
 
 const getCars = async () => {
-	const res = await apiServer.get<{ data: Car[] }>("/cars");
+	const res = await api.get<{ data: Car[] }>("/cars");
 	return res.data.data;
 };
 
@@ -22,9 +21,7 @@ const ListMobil = async () => {
 	return (
 		<div className="py-20 text-center">
 			<div className="px-50 space-y-10">
-				<h1 className="text-4xl font-bold text-gold-soft font-serif">
-					Pilih Jenis Mobil
-				</h1>
+				<h1 className="text-4xl font-bold text-gold-soft font-serif">Pilih Jenis Mobil</h1>
 				<p>
 					Kami memiliki faktor kunci yang menjadikan layanan kami terbaik.
 					Pengemudi kami tidak hanya memiliki pengalaman luas menjelajahi
